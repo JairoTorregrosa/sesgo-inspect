@@ -1,0 +1,73 @@
+[project]
+name = "sesgo"
+version = "0.1.0"
+description = "SESGO (arXiv:2509.03329) Spanish social-bias evaluation for Inspect AI, built for continuous model monitoring."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "inspect-ai==0.3.265",
+    "openai",
+    "openpyxl",
+    "pandas",
+    "pyyaml",
+    "tiktoken",
+    "python-dotenv",
+    "httpx",
+    "numpy",
+]
+
+[project.entry-points.inspect_ai]
+sesgo = "sesgo._registry"
+
+[project.scripts]
+sesgo-data = "sesgo._data:main"
+sesgo-run = "sesgo._runner:main"
+sesgo-report = "sesgo._report:main"
+
+[dependency-groups]
+dev = ["pytest", "pytest-asyncio", "ruff", "pyright", "pandas-stubs", "types-PyYAML"]
+# Exact pin: `docs/figures/*.svg` is committed and `make figures-check` compares bytes.
+# A minor matplotlib bump changes glyph paths and clip-path ids, so the version is part
+# of the artefact. matplotlib wheels statically link their own FreeType, so the same pin
+# gives the same outlines on macOS and on Linux CI.
+figures = ["matplotlib==3.11.2"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sesgo"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["src", "tests", "scripts"]
+# ruff >= 0.16 also formats the code blocks of Markdown files. The specs quote upstream
+# code verbatim, so they must not be reformatted.
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+"scripts/**" = ["D"]
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "strict"
+pythonVersion = "3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+addopts = "-m 'not real_api'"
+markers = [
+    "slow: slow test",
+    "dataset_download: needs external/ or data/ to be present",
+    "real_api: spends money on real API calls; never runs by default",
+]

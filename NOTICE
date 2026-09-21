@@ -1,0 +1,22 @@
+sesgo — independent Inspect AI implementation of SESGO
+Copyright 2026 Jairo Torregrosa
+
+The code in this repository is licensed under the Apache License, Version 2.0
+(see LICENSE).
+
+DATA NOTICE
+
+SESGO prompts are fetched from the authors' public repository
+(https://github.com/mvrobles/SESGO) at a pinned commit and converted locally.
+The upstream repository currently declares no license. Public availability does
+not grant redistribution rights; this project does not redistribute the prompts
+or grant rights to use them. Users are responsible for reviewing the upstream
+terms and applicable law.
+
+The Apache-2.0 license of this repository covers the code, the aggregate results
+under results/, the figures and the documentation. It does not cover the SESGO
+dataset.
+
+This is an independent implementation. It is not affiliated with or endorsed by
+the authors of SESGO or by the UK AI Security Institute, which maintains
+Inspect AI.

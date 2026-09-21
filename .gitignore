@@ -1,0 +1,19 @@
+.env
+.venv/
+external/
+data/
+logs/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+dist/
+results/inflight.json
+
+# Release exclusions: anything below can contain SESGO prompts or a key.
+*.eval
+bundle/
+space/
+*.xlsx
+.env.*
+!.env.example

@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: >-
+  If you use the benchmark, cite the SESGO paper (preferred citation below).
+  If you use this implementation, cite it as well.
+title: "sesgo: an independent Inspect AI implementation of SESGO"
+type: software
+authors:
+  - family-names: Torregrosa
+    given-names: Jairo
+repository-code: "https://github.com/JairoTorregrosa/sesgo-inspect"
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-09-21"
+preferred-citation:
+  type: article
+  title: "SESGO: Spanish Evaluation of Stereotypical Generative Outputs"
+  authors:
+    - family-names: Robles
+      given-names: Melissa
+    - family-names: Bernal
+      given-names: Catalina
+    - family-names: Raigoso
+      given-names: Denniss
+    - family-names: Dulce Rubio
+      given-names: Mateo
+  year: 2025
+  journal: "arXiv preprint arXiv:2509.03329"
+  url: "https://arxiv.org/abs/2509.03329"
