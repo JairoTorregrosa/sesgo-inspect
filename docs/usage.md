@@ -30,7 +30,7 @@ counts and a SHA256 per file, and every run checks the hash before it reads a fi
 fresh clone reproduces the same three hashes.
 
 `data/` and `external/` are git-ignored and must stay so — see the
-[data notice](../README.md#data-license-citation).
+[data notice](../README.md#datos-y-cita).
 
 ## Run a model
 
