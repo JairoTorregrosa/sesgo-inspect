@@ -102,6 +102,10 @@ Aggregates for every run, split and category are in
 [`docs/figures/results.csv`](docs/figures/results.csv); the full report, in Spanish, is
 [`REPORT.md`](REPORT.md).
 
+**Traces.** Every prompt, answer and score of nine of these runs can be browsed in Inspect
+View at [huggingface.co/spaces/jairo/sesgo-inspect](https://huggingface.co/spaces/jairo/sesgo-inspect). Try the filter
+`metadata.category == "xenofobia" and metadata.context_condition == "ambig" and correct == 0`.
+
 ## Interpretation and limits
 
 - **The sign is unstable.** The score is discontinuous at Ft = Fo: a tiny imbalance
@@ -168,8 +172,9 @@ Commands and evidence: [docs/verification.md](docs/verification.md).
 
 **Data notice.** SESGO prompts are fetched from the authors' public repository at a
 pinned commit and converted locally. The upstream repository currently declares no
-license. Public availability does not grant redistribution rights; this project does not
-redistribute the prompts or grant rights to use them. `external/`, `data/` and `logs/`
+license. Public availability does not grant redistribution rights; this repository does
+not redistribute the prompts or grant rights to use them. The trace viewer linked above
+shows prompts inside evaluation logs; it will be taken down at the authors' request. `external/`, `data/` and `logs/`
 are git-ignored because they contain prompts; keep them out of anything you publish.
 Only aggregates are committed.
 

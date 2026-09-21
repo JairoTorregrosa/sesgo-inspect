@@ -107,6 +107,10 @@ Los agregados de cada corrida, split y categoría están en
 [`docs/figures/results.csv`](docs/figures/results.csv); el reporte completo es
 [`REPORT.md`](REPORT.md).
 
+**Trazas.** Cada prompt, respuesta y puntaje de nueve de estas corridas se puede explorar
+en Inspect View en [huggingface.co/spaces/jairo/sesgo-inspect](https://huggingface.co/spaces/jairo/sesgo-inspect). Prueba el filtro
+`metadata.category == "xenofobia" and metadata.context_condition == "ambig" and correct == 0`.
+
 ## Interpretación y límites
 
 - **El signo es inestable.** El puntaje es discontinuo en Ft = Fo: un desbalance mínimo
@@ -179,8 +183,9 @@ Comandos y evidencia: [docs/verification.md](docs/verification.md).
 **Aviso sobre los datos.** Los prompts de SESGO se obtienen del repositorio público de
 las autoras en un commit fijado y se convierten localmente. El repositorio upstream no
 declara licencia. Que algo esté disponible públicamente no otorga derecho a
-redistribuirlo; este proyecto no redistribuye los prompts ni otorga derechos sobre
-ellos. `external/`, `data/` y `logs/` están en `.gitignore` porque contienen prompts;
+redistribuirlo; este repositorio no redistribuye los prompts ni otorga derechos sobre
+ellos. El visor de trazas enlazado arriba muestra prompts dentro de los logs de
+evaluación; se retirará si las autoras lo piden. `external/`, `data/` y `logs/` están en `.gitignore` porque contienen prompts;
 no los incluyas en nada que publiques. Solo se versionan agregados.
 
 El código tiene licencia [Apache-2.0](LICENSE); ver [NOTICE](NOTICE). Si usas el

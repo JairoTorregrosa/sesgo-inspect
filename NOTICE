@@ -9,7 +9,7 @@ DATA NOTICE
 SESGO prompts are fetched from the authors' public repository
 (https://github.com/mvrobles/SESGO) at a pinned commit and converted locally.
 The upstream repository currently declares no license. Public availability does
-not grant redistribution rights; this project does not redistribute the prompts
+not grant redistribution rights; this repository does not redistribute the prompts
 or grant rights to use them. Users are responsible for reviewing the upstream
 terms and applicable law.
 
