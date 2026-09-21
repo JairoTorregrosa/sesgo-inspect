@@ -46,7 +46,9 @@ figures:
 # Fails when the committed docs/figures/*.svg or results.csv differ from a fresh build.
 # It also builds twice into temp dirs and compares hashes, so it fails on a
 # non-deterministic chart even before anything is committed. PNG bytes are compared but
-# only reported: their encoding is not guaranteed across platforms.
+# only reported: their encoding is not guaranteed across platforms. The committed files
+# were built on macOS arm64; on Linux x86-64 the bootstrap bounds differ in the last
+# digits, so this check is not part of CI.
 figures-check:
 	uv run --group figures python scripts/make_figures.py --check
 	git diff --exit-code -- docs/figures

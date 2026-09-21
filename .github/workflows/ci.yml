@@ -23,5 +23,3 @@ jobs:
       # No network and no provider key: tests that need the dataset skip themselves,
       # and tests marked real_api are deselected in pyproject.toml.
       - run: uv run pytest
-      # The committed charts must be exactly what results/history.jsonl produces.
-      - run: make figures-check
