@@ -71,3 +71,7 @@ markers = [
     "dataset_download: needs external/ or data/ to be present",
     "real_api: spends money on real API calls; never runs by default",
 ]
+
+[tool.uv]
+# Supply-chain cooldown: resolve only releases at least 7 days old, on every machine and in CI.
+exclude-newer = "7 days"
